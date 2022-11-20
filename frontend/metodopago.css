@@ -1,0 +1,302 @@
+*,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  .body1 {
+    font-family: "Montserrat", "Segoe UI", Tahoma, "Geneva", Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-tarjeta {
+    display: block;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+  }
+  
+  .progress {
+    background-color: rgb(34, 96, 158) !important;
+    width: 0%;
+    transition: 0.4s;
+    height: 4px !important;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: rgb(34, 96, 158);
+    color: #f3f3f3;
+  }
+  
+  /* Form */
+  .form {
+    /* width: clamp(320px, 30%, 430px); */
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; 
+  }
+  
+  .btn1 {
+    padding: 0.75rem !important;
+    display: block;
+    text-decoration: none !important;
+    text-align: center !important;
+    border-radius: 0.25rem !important;
+    cursor: pointer !important;
+    transition: 0.3s !important;
+  }
+  .btn-next{
+    background-color: #212529 !important;
+        color: #f3f3f3 !important; 
+        width: 100% !important;
+  }
+  .btn-prev{
+    background-color: #212529 !important;
+    color: #f3f3f3 !important; 
+    width: 100% !important;
+  }
+  .btn-prev1{
+    background-color: #212529 !important;
+    color: #f3f3f3 !important; 
+    width: 100% !important;
+  }
+  .btn-submit{
+    background-color: #212529 !important;
+    color: #f3f3f3 !important; 
+    width: 100% !important;
+
+  }
+
+
+
+.r-compra{
+border: 1px solid #ccc;
+  overflow: auto; 
+  max-width: 400px;   
+  max-height: 450px;
+  color:#212529;
+  text-align:center; 
+  font-size:22px; 
+  border-radius:10px;
+}
+
+
+
+.r-compra {
+  border: 1px solid #aaa;
+  width:100%;
+  max-width: 400px;
+  background: #f1f2f3;
+  overflow:auto;
+  box-sizing: border-box;
+  padding:0 1rem;
+}
+
+
+.pasos{
+  border: 1px solid #aaa;
+  border-radius:10px;
+
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.r-compra::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.r-compra::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.r-compra::-webkit-scrollbar-button:increment,.r-compra::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.r-compra::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.r-compra::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.r-compra::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+
+
+
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.body::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+.body::-webkit-scrollbar-button:increment,.body::-webkit-scrollbar-button {
+  display: none;
+} 
+
+.body::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.map-responsive{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+
+}
+
+.map-responsive iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+
+}
+.demo-container {
+            width: 100%;
+            max-width: 100%;
+            margin:  auto;
+        }
+
+        .input-tarjeta{
+        display: inline;
+        margin: 2px;
+        }
+        @media (min-width: 576px) {
+          .col-sm-1 {
+            width: 100% !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .jp-card-lower {
+            width: 80% !important;
+            left: 10% !important;
+          }
+        }
+        @media (max-width: 393px) {
+          .jp-card-number {
+            font-size: 20px !important;
+          }
+          .jp-card-name {
+            font-size: 18px !important;
+          }
+        }
+        @media (max-width: 346px) {
+          .jp-card-number {
+            font-size: 18px !important;
+          }
+        }

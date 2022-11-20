@@ -1,0 +1,2 @@
+python GetPaginas.py
+pause
