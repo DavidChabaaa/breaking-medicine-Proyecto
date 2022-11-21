@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../conexion.php";
+    include_once "../conexion.php";
     $bd = new Conexion();
     $bd->Conectar();
     $total = 0;

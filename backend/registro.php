@@ -1,8 +1,14 @@
 <?php
-    include 'conexion.php';
+    include_once 'conexion.php';
     if( $_POST["nombre"] != "" && $_POST["correo"] != "" && $_POST["password"] != "" && $_POST["password2"] != "" && $_POST["password"] == $_POST["password2"]) {
         if (strlen($_POST["nombre"]) > 12 || strlen($_POST["password"]) > 12) {
             exit("ERROR");
+        }
+        else if (strlen($_POST["password"]) < 6) {
+            exit("La contraseña tiene que tener un minimo de 6 caracteres");
+        }
+        if (!preg_match("/[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]+/", $_POST["correo"])) {
+            exit("Ingrese un correo valido");
         }
         
         $bd = new Conexion();

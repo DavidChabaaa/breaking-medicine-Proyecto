@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-        include '../conexion.php';
+        include_once '../conexion.php';
         $bd = new Conexion();
         $bd->Conectar();
         if (isset($_POST["buscar"]) && $_POST["buscar"] != '') {

@@ -2,7 +2,7 @@
     if(session_status() == PHP_SESSION_NONE){
         session_start();
     }
-    include_once $_SERVER["DOCUMENT_ROOT"]."/Prueba/breaking-medicine-Proyecto/backend/conexion.php";
+    include_once $_SERVER["DOCUMENT_ROOT"]."/backend/conexion.php";
     $bd = new Conexion();
     $bd->Conectar();
 
@@ -32,7 +32,7 @@
     <div class="col d-flex align-items-center col-md-auto responsive-carrito">
         <h6 class="text-muted" style="margin-bottom: 0px; width: fit-content; responsive-carrito"><?php echo $consulta["nombre"]?> x <span id="formRes<?php echo $id?>"><?php echo $_SESSION["carrito"][$id]["cantidad"]; ?></span></h6>
     </div>
-    <div class="col d-flex justify-content-end col-md-auto responsive-carrito "  style="text-align: end;">
+    <div class="col d-flex justify-content-end col-md-auto responsive-carrito" style="text-align: end;">
     <h6 class="mb-0" style="width: fit-content;" id="resumen<?php echo $id?>"><?php if ($consulta["descuento"] == 0) {
             echo "$".$consulta["precio"]*$_SESSION["carrito"][$id]["cantidad"];
             }elseif ($consulta["descuento"] > 0 && $consulta["descuento"] < 100) {

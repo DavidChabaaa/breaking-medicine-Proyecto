@@ -12,7 +12,7 @@
 </style> -->
 <?php
     
-    include_once $_SERVER["DOCUMENT_ROOT"]."/Prueba/breaking-medicine-Proyecto/backend/conexion.php";
+    include_once $_SERVER["DOCUMENT_ROOT"]."/backend/conexion.php";
     $bd = new Conexion();
     $bd->Conectar();
     

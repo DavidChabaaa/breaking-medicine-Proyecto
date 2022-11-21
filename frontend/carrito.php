@@ -243,8 +243,21 @@ if (!isset($_SESSION["carrito"])) $_SESSION["carrito"] = []; ?>
         document.getElementById("div-metodo").style.display = "none";
 
         function comprar() {
-            document.getElementById("div-articulo").style.display = "none";
-            document.getElementById("div-metodo").style.display = "flex";
+            variable = new XMLHttpRequest();
+            variable.onload = function() {
+                if (JSON.parse(this.responseText)["id"] != -1) {
+                    document.getElementById("div-articulo").style.display = "none";
+                    document.getElementById("div-metodo").style.display = "flex";
+                }
+                else {
+                    alert("tiene que logearse para hacer una compra");
+                }
+            }
+            variable.open("POST", "../backend/cuenta.php");
+            variable.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            variable.send();
+
+            
         }
 
         function volverCompra() {
