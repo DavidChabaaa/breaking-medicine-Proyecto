@@ -1,6 +1,6 @@
 <?php
     class Conexion {
-    private $servername = "localhost";
+    private $servername = "139.144.172.138";
         private $username = "breakingMedicine";
         private $password = "Medicine"; // Josue no tiene contraseña
         private $db = "proyecto";
